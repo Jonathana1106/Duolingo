@@ -1,0 +1,2 @@
+# Duolingo
+Un grupo de amigos ha decidido requiere desarrollar un sitio para intercambio de idiomas, donde se puedan registrar las personas interesadas en practicar un idioma y a la vez les interese enseñar o ayudar con la práctica de su propio idioma natal u otro que conozcan. Así por ejemplo, si la lengua materna de José es el español y también domina el inglés, y le interesa practicar alemán, puede buscar personas interesadas en enseñar alemán y aprender/practicar español o inglés. En otras palabras, se intercambia la práctica de un idioma por otro.
