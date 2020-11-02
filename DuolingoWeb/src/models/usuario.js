@@ -12,7 +12,9 @@ const UsuarioSchema = new Schema({
     contraseña: {type:String, required:true},
     paisOrigen: {type:String, required:true},
     idiomaAprender: {type:String, required:true},
+    nivelAprender:{type:String, required:true},
     idiomaEnseñar: {type:String, requiered:true},
+    nivelEnseñar:{type:String, requiered:true},
     hobbies: {type:String, requiered:true},
     medio: {type:String, requiered:true}
 });
