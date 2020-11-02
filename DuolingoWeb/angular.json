@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "DuolingoWeb"
+    }
+  },
+  "defaultProject": "DuolingoWeb",
+  "cli": {
+    "analytics": "0c73c25e-fc7a-4f4d-b64d-7282a6cf7356"
+  }
 }
