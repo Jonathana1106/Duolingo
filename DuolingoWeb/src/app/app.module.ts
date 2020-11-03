@@ -22,6 +22,7 @@ import { AdminlrComponent } from './Admin/adminlr/adminlr.component';
 import { UserComponent } from './Users/user/user.component';
 import { NavbaruComponent } from './Users/navbaru/navbaru.component';
 import { UserlrComponent } from './Users/userlr/userlr.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -37,6 +38,7 @@ import { UserlrComponent } from './Users/userlr/userlr.component';
     UserComponent,
     NavbaruComponent,
     UserlrComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

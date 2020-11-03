@@ -1,0 +1,21 @@
+footer {
+  position: sticky;
+  top: 85%;
+}
+
+.bottom-text {
+  text-align: right;
+  padding-bottom: 5px;
+  padding-right: 10px;
+  font-size: 16pt;
+}
+
+.hline-footer {
+  border: 5px solid white;
+}
+
+@media screen and (max-width: break-smallest) {
+  .bottom-text {
+    font-size: 10pt;
+  }
+}
