@@ -1,3 +1,115 @@
 <app-navbaru></app-navbaru>
 
-<p>userlr works!</p>
+
+<div class="login-page">
+    <mat-card class="mat-elevation-z12">
+
+        <mat-card-title style="text-align:center;">SignIn/SignUp</mat-card-title>
+
+        <mat-tab-group mat-stretch-tabs class="example-stretched-tabs">
+
+
+            <mat-tab label="Sign In">
+
+                <mat-card-content>
+
+                    <form action="">
+
+                        <mat-form-field>
+                            <input matInput type="email" placeholder="Email" name="email">
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <input matInput type="password" required minlength="8" placeholder="Password"
+                                name="password">
+                        </mat-form-field>
+
+                        <button mat-raised-button color="primary" class="login-button">SignIn</button>
+
+                    </form>
+
+                </mat-card-content>
+
+            </mat-tab>
+
+            <mat-tab label="SignUp">
+
+
+                <mat-card-content>
+
+
+                    <form action="">
+
+                        <mat-form-field>
+                            <input matInput type="text" id="input-name" name="fullName" placeholder="Nombre completo">
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <input matInput type="number" min="0" max="100" id="input-age" name="age"
+                                placeholder="Edad">
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <input matInput type="text" maxlength="20" id="input-genre" name="genre"
+                                placeholder="Genero">
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <input matInput type="email" placeholder="Email" name="email">
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <input matInput type="password" required minlength="8" placeholder="Password"
+                                name="password">
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <input matInput type="text" maxlength="40" id="input-country" name="country"
+                                placeholder="País de origen">
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <input matInput type="text" maxlength="50" id="input-language" name="language"
+                                placeholder="Idioma que le interesa practicar/aprender">
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <input matInput type="text" maxlength="25" id="input-level" name="level"
+                                placeholder="Nivel del idioma que desea aprender">
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <input matInput type="text" maxlength="50" id="input-language" name="language"
+                                placeholder="Idioma que puede enseñar">
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <input matInput type="text" maxlength="25" id="input-level" name="level"
+                                placeholder="Nivel del idioma que desea enseñar">
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <input matInput type="text" maxlength="100" id="input-hobbies" name="hobbies"
+                                placeholder="Hobbies">
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <input matInput type="text" maxlength="50" id="input-plattform" name="plattform"
+                                placeholder="Plataforma en la que desea practicar/aprender">
+                        </mat-form-field>
+
+                        <button mat-raised-button color="primary" class="login-button">SignUp</button>
+
+                    </form>
+
+
+                </mat-card-content>
+
+            </mat-tab>
+
+        </mat-tab-group>
+
+
+    </mat-card>
+
+</div>
