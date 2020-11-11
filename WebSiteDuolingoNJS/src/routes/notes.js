@@ -37,6 +37,7 @@ router.get("/notes", async(req, res) => {
         const contexto = {
             notes: documentos.map((documento) => {
                 return {
+                    _id: documento._id,
                     title: documento.title,
                     description: documento.description,
                 };
