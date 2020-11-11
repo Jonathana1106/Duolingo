@@ -25,23 +25,63 @@ router.post('/notes/newnote', async(req, res) => {
     } else {
         const newNote = new Note({ title, description });
         await newNote.save(); //Guarda en la base
-        //Redirecciona a esa ruta
+        req.flash('success_msg', 'Datos añadidos con éxito')
+            //Redirecciona a esa ruta
         res.redirect('/notes');
     }
 });
 
 
-router.get('/notes', async(req, res) => {
-    const notes = await Note.find();
-    res.render('notes/all-notes', { notes });
+router.get("/notes", async(req, res) => {
+    await Note.find().sort({ date: 'desc' }).then((documentos) => {
+        const contexto = {
+            notes: documentos.map((documento) => {
+                return {
+                    title: documento.title,
+                    description: documento.description,
+                };
+            }),
+        };
+        res.render("notes/all-notes", {
+            notes: contexto.notes,
+        });
+    });
 });
-/*Donde estan guardados los datos
-router.get('/notes', async(req, res) => {
-    //Para consultar desde la base
-    //Consulta de todos los datos
-    const notes = await Note.find();
-    //Redirecciona a otra vista
-    res.render('notes/all-notes', { notes });
+
+router.get('/notes/edit/:id', async(req, res) => {
+    const note = await Note.findById(req.params.id);
+    res.render('notes/edit-notes', { note });
+});
+
+router.put('/notes/edit-notes/:id', async(req, res) => {
+    const { title, description } = req.body;
+    await Note.findByIdAndUpdate(req.params.id, { title, description });
+    req.flash('success_msg', 'Datos actualizados con éxitos');
+    res.redirect('/notes');
+});
+
+router.delete('/notes/delete/:id', async(req, res) => {
+    await Note.findByIdAndDelete(req.params.id);
+    req.flash('success_msg', 'Datos eliminados con éxito');
+    res.redirect('/notes');
+});
+
+
+/*/Editar los datos de la base
+router.get('/notes/edit/:id', (req, res) => {
+    const note = await Note.findById(req.params.id).then((documentos) => {
+        const contexto = {
+            notes: documentos.map((documento) => {
+                return {
+                    title: documento.title,
+                    description: documento.description,
+                };
+            }),
+        };
+        res.render('notes/edit-notes', {
+            notes: contexto.notes,
+        });
+    });
 });*/
 
 module.exports = router;
