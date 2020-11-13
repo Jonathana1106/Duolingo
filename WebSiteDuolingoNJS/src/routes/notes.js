@@ -25,8 +25,8 @@ router.post('/notes/newnote', async(req, res) => {
     } else {
         const newNote = new Note({ title, description });
         await newNote.save(); //Guarda en la base
-        req.flash('success_msg', 'Datos añadidos con éxito')
-            //Redirecciona a esa ruta
+        req.flash('success_msg', 'Datos añadidos con éxito');
+        //Redirecciona a esa ruta
         res.redirect('/notes');
     }
 });
@@ -49,14 +49,45 @@ router.get("/notes", async(req, res) => {
     });
 });
 
+/*
+    try {
+      const user = await _id.findOne({_id: req.body._id});
+      res.render('notes/edit-notes', {
+        _id: _id.toObject(),
+        title: title.toObject(),
+        description: documento.toObject(),
+      })
+    } catch (err) {
+        console.error(err);
+      } 
+});*/
+
+/*router.get('/notes/edit/:id', async(req, res) => {
+    const contexto = await Note.findById(req.params._id).lean();
+    res.render('notes/edit-notes', { contexto });
+
+});*/
+
 router.get('/notes/edit/:id', async(req, res) => {
-    const note = await Note.findById(req.params.id);
-    res.render('notes/edit-notes', { note });
+    await Note.findById(req.params._id).then((documentos) => {
+        const contexto = {
+            notes: documentos.map((documento) => {
+                return {
+                    _id: documento._id,
+                    title: documento.title,
+                    description: documento.description,
+                };
+            }),
+        };
+        res.render("notes/all-notes", {
+            notes: contexto.notes,
+        });
+    });
 });
 
 router.put('/notes/edit-notes/:id', async(req, res) => {
     const { title, description } = req.body;
-    await Note.findByIdAndUpdate(req.params.id, { title, description });
+    await Note.findByIdAndUpdate(req.params._id, { title, description });
     req.flash('success_msg', 'Datos actualizados con éxitos');
     res.redirect('/notes');
 });
@@ -68,21 +99,6 @@ router.delete('/notes/delete/:id', async(req, res) => {
 });
 
 
-/*/Editar los datos de la base
-router.get('/notes/edit/:id', (req, res) => {
-    const note = await Note.findById(req.params.id).then((documentos) => {
-        const contexto = {
-            notes: documentos.map((documento) => {
-                return {
-                    title: documento.title,
-                    description: documento.description,
-                };
-            }),
-        };
-        res.render('notes/edit-notes', {
-            notes: contexto.notes,
-        });
-    });
-});*/
+
 
 module.exports = router;
