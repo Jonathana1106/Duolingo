@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "audit": "0.0.6",
     "bcryptjs": "^2.4.3",
     "connect-flash": "^0.1.1",
     "express": "^4.17.1",
@@ -17,12 +18,12 @@
     "express-session": "^1.17.1",
     "hbs": "^4.1.1",
     "method-override": "^3.0.0",
-    "mongoose": "^5.10.13",
+    "mongoose": "^5.10.14",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0"
   },
   "devDependencies": {
-    "handlebars": "^4.5.0",
+    "handlebars": "^4.7.6",
     "nodemon": "^2.0.6"
   }
 }
