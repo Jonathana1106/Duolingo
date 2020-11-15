@@ -6,12 +6,12 @@ const User = require('../models/User');
 
 passport.use(new localStrategy({
     usernameField: 'email'
-}, async (email, passport, done) => {
+}, async (email, password, done) => {
     const user = await User.findOne({email: email});
-    if (! user) {
-        return done(null, false, {message: 'Usuario incorrecto'});
+    if (!user) {
+        return done(null, false, {message: 'Usuario no encontrado'});
     } else {
-        const match = await User.matchPassword(password);
+        const match = await user.matchPassword(password);
         if (match){
             return done(null,user);
         } else {

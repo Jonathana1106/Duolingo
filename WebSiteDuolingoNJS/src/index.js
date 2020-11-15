@@ -9,7 +9,7 @@ const passport= require('passport');
 // Initializations
 const app = express();
 require('./database');
-require('/config/passport');
+require('./config/passport');
 
 // Settings
 app.set('port', process.env.PORT || 3000)
@@ -40,6 +40,8 @@ app.use(flash());
 app.use((req, res, next) => {
     res.locals.success_msg = req.flash('success_msg');
     res.locals.error_msg = req.flash('error_msg');
+    res.locals.error = req.flash('error');
+
     next();
 });
 

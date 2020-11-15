@@ -7,11 +7,11 @@ router.get('/users/loginregister', (req, res) => {
     res.render('users/loginregister');
 });
 
-router.post('users/loginregister', passport.authenticate('local')), {
+router.post('/users/loginregister', passport.authenticate('local', {
     successRedirect: '/notes',
-    failureRedirect: 'users/loginregister',
+    failureRedirect: '/users/loginregister',
     failureFlash: true
-}
+}));
 
 router.get( '/users/signup', (req, res) => {
     res.render('users/signup');
