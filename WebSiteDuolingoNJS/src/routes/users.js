@@ -2,7 +2,8 @@ const express = require('express');
 const router = express.Router();
 
 const User = require('../models/User');
-const passport = require('passport') 
+const passport = require('passport'); 
+const { route } = require('./notes');
 router.get('/users/loginregister', (req, res) => {
     res.render('users/loginregister');
 });
@@ -48,6 +49,11 @@ router.post("/users/signup", async (req, res) => {
         res.redirect('/users/loginregister');
     }
 
+});
+
+router.get('/users/logout',(req,res)=>{
+    req.logout();
+    res.redirect('/');
 });
 
 module.exports = router;
