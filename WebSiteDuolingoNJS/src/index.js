@@ -6,6 +6,10 @@ const sesion = require('express-session');
 const flash = require('connect-flash');
 const passport= require('passport');
 
+
+const Handlebars =  require('handlebars');
+const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access');
+
 // Initializations
 const app = express();
 require('./database');
@@ -15,6 +19,7 @@ require('./config/passport');
 app.set('port', process.env.PORT || 3000)
 app.set('views', path.join(__dirname, 'views'));
 app.engine('.hbs', expreshbs({
+    handlebars: allowInsecurePrototypeAccess(Handlebars),
     defaultLayout: 'main',
     layoutsDir: path.join(app.get('views'), 'layouts'),
     partialsDir: path.join(app.get('views'), 'partials'),
@@ -51,6 +56,7 @@ app.use(require('./routes/admins'));
 app.use(require('./routes/notes'));
 app.use(require('./routes/users'));
 app.use(require('./routes/busquedas'));
+app.use(require('./routes/Consulta1Admi'));
 
 // Static Files
 app.use(express.static(path.join(__dirname, 'public')));
