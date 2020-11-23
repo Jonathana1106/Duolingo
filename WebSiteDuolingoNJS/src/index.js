@@ -61,6 +61,7 @@ app.use(require('./routes/users'));
 app.use(require('./routes/busquedas'));
 app.use(require('./routes/Consulta1Admi'));
 app.use(require('./routes/Consulta2Admi'));
+
 app.use(require('./routes/Consulta3Admi'));
 
 // Static Files
