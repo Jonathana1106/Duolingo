@@ -5,19 +5,21 @@
         </div>
         <div class="card-body">
             <Form class="">
-                
-                    <Form action="/notes/edit-notes/{{id}}?_method=PUT" method="POST">
+
+                <Form action="/notes/edit-notes/{{id}}?_method=PUT" method="POST">
                     <input type="hidden" name="_method" value="PUT">
                     <div class="form-group">
-                        <input type="text" name="title" class="form-control" placeholder="title" value="{{title}}"></div>
-                        <div class="form-group">
-                            <textarea name="description" class="form-control" placeholder="description">{{description}}</textarea>
-                        </div>
-                    
+                        <input type="text" name="title" class="form-control" placeholder="title" value="{{title}}">
+                    </div>
+                    <div class="form-group">
+                        <textarea name="description" class="form-control"
+                            placeholder="description">{{description}}</textarea>
+                    </div>
+
                     <button type="submit" class="btn btn-primary btn-block">
                         Guardar
                     </button>
                 </Form>
-            </div>
         </div>
     </div>
+</div>

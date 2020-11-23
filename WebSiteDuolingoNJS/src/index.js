@@ -16,6 +16,7 @@ const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-ac
 const app = express();
 require('./database');
 require('./config/passport');
+require('./config/passportA');
 
 // Settings
 app.set('port', process.env.PORT || 3000)
@@ -44,7 +45,7 @@ app.use(passport.session());
 
 app.use(flash());
 
-//varivables globales
+//variables globales
 app.use((req, res, next) => {
     res.locals.success_msg = req.flash('success_msg');
     res.locals.error_msg = req.flash('error_msg');
@@ -58,7 +59,6 @@ app.use(require('./routes/index'));
 app.use(require('./routes/admins'));
 app.use(require('./routes/notes'));
 app.use(require('./routes/users'));
-app.use(require('./routes/busquedas'));
 app.use(require('./routes/Consulta1Admi'));
 app.use(require('./routes/Consulta2Admi'));
 app.use(require('./routes/Consulta3Admi'));

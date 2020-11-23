@@ -7,6 +7,34 @@ const UserSchema = new Schema({
         type: String,
         required: true
     },
+    age: {
+        type: String,
+        required: true
+    },
+    sex: {
+        type: String,
+        required: true
+    },
+    paisO: {
+        type: String,
+        required: true
+    },
+    languageL: {
+        type: [String],
+        required: true
+    },
+    languageT: {
+        type: [String],
+        required: true
+    },
+    hobbies: {
+        type: String,
+        required: true
+    },
+    plattform: {
+        type: String,
+        required: true
+    },
     password: {
         type: String,
         required: true

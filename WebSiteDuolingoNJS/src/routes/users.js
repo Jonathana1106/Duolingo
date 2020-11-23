@@ -4,6 +4,7 @@ const router = express.Router();
 const User = require('../models/User');
 const passport = require('passport');
 const { route } = require('./notes');
+
 router.get('/users/loginregister', (req, res) => {
     res.render('users/loginregister');
 });
@@ -19,10 +20,31 @@ router.get('/users/signup', (req, res) => {
 });
 
 router.post("/users/signup", async (req, res) => {
-    const { name, email, password } = req.body;
+    const { name, age, sex, paisO, languageL, languageT, hobbies, plattform, email, password } = req.body;
     const errors = [];
 
     if (name.length <= 0) {
+        errors.push({ text: 'Por favor, ingrese su nombre' });
+    }
+    if (age.length <= 0) {
+        errors.push({ text: 'Por favor, ingrese su nombre' });
+    }
+    if (sex.length <= 0) {
+        errors.push({ text: 'Por favor, ingrese su nombre' });
+    }
+    if (paisO.length <= 0) {
+        errors.push({ text: 'Por favor, ingrese su nombre' });
+    }
+    if (languageL.length <= 0) {
+        errors.push({ text: 'Por favor, ingrese su nombre' });
+    }
+    if (languageT.length <= 0) {
+        errors.push({ text: 'Por favor, ingrese su nombre' });
+    }
+    if (hobbies.length <= 0) {
+        errors.push({ text: 'Por favor, ingrese su nombre' });
+    }
+    if (plattform.length <= 0) {
         errors.push({ text: 'Por favor, ingrese su nombre' });
     }
     if (email.length <= 0) {
@@ -42,7 +64,7 @@ router.post("/users/signup", async (req, res) => {
             req.flash('error_msg', 'Este correo ya existe');
             res.redirect('/users/signup');
         }
-        const newUser = new User({ name, email, password });
+        const newUser = new User({ name, age, sex, paisO, languageL, languageT, hobbies, plattform, email, password });
         newUser.password = await newUser.encryptPassword(password);
         await newUser.save();
         req.flash('success_msg', 'Usuario registrado');
