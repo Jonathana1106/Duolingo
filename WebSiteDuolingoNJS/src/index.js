@@ -10,6 +10,8 @@ const passport= require('passport');
 const Handlebars =  require('handlebars');
 const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access');
 
+
+
 // Initializations
 const app = express();
 require('./database');
@@ -20,6 +22,7 @@ app.set('port', process.env.PORT || 3000)
 app.set('views', path.join(__dirname, 'views'));
 app.engine('.hbs', expreshbs({
     handlebars: allowInsecurePrototypeAccess(Handlebars),
+    helpers: {json: function (context) {return JSON.stringify(context);}},
     defaultLayout: 'main',
     layoutsDir: path.join(app.get('views'), 'layouts'),
     partialsDir: path.join(app.get('views'), 'partials'),

@@ -18,7 +18,8 @@ const UserSchema = new Schema({
     date: {
         type: Date,
         default: Date.now
-    }
+    },
+    user:{type: String}
 });
 
 UserSchema.methods.encryptPassword = async (password) => {

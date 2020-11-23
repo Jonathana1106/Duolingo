@@ -36,7 +36,7 @@ router.post('/notes/newnote',isAuthenticated, async(req, res) => {
 
 
 router.get("/notes",isAuthenticated, async(req, res) => {
-    const notes=  await Note.find().sort({date: 'desc'});
+    const notes=  await Note.find({user: req.user.id}).sort({date: 'desc'});
     res.render('notes/all-notes',{notes}); 
 });
 /*

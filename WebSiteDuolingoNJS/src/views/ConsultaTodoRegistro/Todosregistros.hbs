@@ -1,55 +1,48 @@
-<div>
-    <!-- Division para CRUD aerolineas -->
-    <div class="container">
-        <h1>Consultar todos los usuarios registrados</h1>
-        <div class="row">
-            <!--Formulario -->
-            <div class="col -md-5">
-                <div class="card">
-                  <div class="card-body">
-                    <form  action="/ConsultaTodoRegistro/Todosregistros" method="POST">
-                      <!--Campos de texto y botones -->
-                      
-                      <button type="submit" class="btn btn-primary btn-block">
-                        Buscar Vuelo
-                      </button>
+<div class="container">
+    <h1>Consultar
+    </h1>
+    <div
+        class="row">
+        <!--Formulario -->
+        <div class="col -md-5">
+            <div class="card">
+                <div class="card-body">
+                    <form
+                        action="/ConsultaTodoRegistro/Todosregistros" method="POST">
+                        <!--Campos de texto y botones -->
+
+                        <button type="submit" class="btn btn-primary btn-block">
+                            Buscar
+                        </button>
 
                     </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
+    <hr>
+        <p></p>
+        <p></p>
+        <p></p>
+    </hr>
+    <h1>Resultado de la busqueda</h1>
+    <!--Tabla que muestra los datos -->
 
-<h4>Resultado de la consulta</h4>
-<!--
-<div class="row">
-   
-    <div class="col-md-3">
-        <div class="card">
-            <div class="card-body">
-                <h6 class="card-title">Cedula pasajero: {{{obj.Nombre}}}</h6>
-                <h6 class="card-title">Rango de boletos:{{{obj.PaisOrigen}}}</h6>
-                <h6 class="card-title">Rango de boletos:[{{{obj.idiomasAprender}}}]</h6>
+    <div class="row">
+        {{#each Todos}}
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h6 class="card-title">Nombre:
+                            {{ Nombre }}</h6>
+                        <h6 class="card-title">PaisOrigen:
+                            {{ Sexo }}
+      
+                        </h6>
+                    </div>
+                </div>
             </div>
-        </div>
-        
+        {{/each}}
     </div>
-    
-</div>
--->
 
-<table class="table table-hover table-responsive">
-  <thead>
-    <tr>
-      <th scope="col">Nombre</th>
-      <th scope="col">PaisOrigen</th>
-      <th scope="col">idiomasAprender</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr class="table-active">
-      <th scope="row">{{{obj.Nombre}}}</th>
-      <td>{{{obj.PaisOrigen}}}</td>
-      <td>{{{obj.idiomasAprender}}}</td>
-    </tr>
-</tbody>
+</div>
