@@ -5,6 +5,7 @@
         </div>
         <div class="card-body">
             <Form class="">
+<<<<<<< Updated upstream
 
                 <Form action="/notes/edit-notes/{{id}}?_method=PUT" method="POST">
                     <input type="hidden" name="_method" value="PUT">
@@ -16,6 +17,17 @@
                             placeholder="description">{{description}}</textarea>
                     </div>
 
+=======
+                
+                    <Form action="/notes/edit-notes/{{editNote._id}}?_method=PUT" method="POST">
+                    <input type="hidden" name="_method" value="PUT">
+                    <div class="form-group">
+                        <input type="text" name="title" class="form-control" placeholder="title" value="{{editNote.title}}"></div>
+                        <div class="form-group">
+                            <textarea  name="description" class="form-control" placeholder="description">{{editNote.description}}</textarea>
+                        </div>
+                    
+>>>>>>> Stashed changes
                     <button type="submit" class="btn btn-primary btn-block">
                         Guardar
                     </button>

@@ -16,7 +16,7 @@ const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-ac
 const app = express();
 require('./database');
 require('./config/passport');
-require('./config/passportA');
+//require('./config/passportA');
 
 // Settings
 app.set('port', process.env.PORT || 3000)
@@ -63,6 +63,10 @@ app.use(require('./routes/Consulta1Admi'));
 app.use(require('./routes/Consulta2Admi'));
 app.use(require('./routes/Consulta3Admi'));
 app.use(require('./routes/Consulta4Admi'));
+//app.use(require('./routes/Consulta1Usuario'));
+app.use(require('./routes/Consulta2Usuario'));
+//app.use(require('./routes/Consulta3Usuario'));
+//app.use(require('./routes/Consulta4Usuario'));
 
 // Static Files
 app.use(express.static(path.join(__dirname, 'public')));
