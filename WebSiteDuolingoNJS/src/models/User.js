@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const {Schema} = mongoose;
+const { Schema } = mongoose;
 const bcrypt = require('bcryptjs');
 
 const UserSchema = new Schema({
@@ -19,7 +19,7 @@ const UserSchema = new Schema({
         type: Date,
         default: Date.now
     },
-    user:{type: String}
+    user: { type: String }
 });
 
 UserSchema.methods.encryptPassword = async (password) => {

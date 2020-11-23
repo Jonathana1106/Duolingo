@@ -4,11 +4,11 @@ const expreshbs = require('express-handlebars');
 const methodOverride = require('method-override');
 const sesion = require('express-session');
 const flash = require('connect-flash');
-const passport= require('passport');
+const passport = require('passport');
 
 
-const Handlebars =  require('handlebars');
-const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access');
+const Handlebars = require('handlebars');
+const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access');
 
 
 
@@ -22,7 +22,7 @@ app.set('port', process.env.PORT || 3000)
 app.set('views', path.join(__dirname, 'views'));
 app.engine('.hbs', expreshbs({
     handlebars: allowInsecurePrototypeAccess(Handlebars),
-    helpers: {json: function (context) {return JSON.stringify(context);}},
+    helpers: { json: function (context) { return JSON.stringify(context); } },
     defaultLayout: 'main',
     layoutsDir: path.join(app.get('views'), 'layouts'),
     partialsDir: path.join(app.get('views'), 'partials'),
@@ -49,7 +49,7 @@ app.use((req, res, next) => {
     res.locals.success_msg = req.flash('success_msg');
     res.locals.error_msg = req.flash('error_msg');
     res.locals.error = req.flash('error');
-    res.locals.user=req.user || null;
+    res.locals.user = req.user || null;
     next();
 });
 

@@ -5,5 +5,5 @@ mongoose.connect('mongodb://localhost/duolingoDB', {
     useNewUrlParser: true,
     useFindAndModify: false
 })
-.then(db => console.log('DB is connected'))
-.catch(err => console.error(err));
+    .then(db => console.log('DB is connected'))
+    .catch(err => console.error(err));
