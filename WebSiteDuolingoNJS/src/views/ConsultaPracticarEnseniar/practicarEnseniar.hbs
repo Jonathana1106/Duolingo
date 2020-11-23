@@ -27,20 +27,19 @@
     <!--Tabla que muestra los datos -->
 
     <div class="row">
-        {{#each Todos}}
+        {{#each CantPais}}
         <div class="col-md-3">
             <div class="card">
                 <div class="card-body">
                     <h6 class="card-title">Pais Origen:
-                        {{ PaisOrigen }}</h6>
+                        {{ _id }}</h6>
                     </h6>
                     <h6 class="card-title">Cantidad:
-                        {{ PaisOrigen }}</h6>
+                        {{ Total_paises }}</h6>
                     </h6>
                 </div>
             </div>
         </div>
         {{/each}}
     </div>
-
 </div>

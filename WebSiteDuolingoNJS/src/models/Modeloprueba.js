@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 const bcrypt = require('bcryptjs');
 
-const idiomaA = new Schema({ idioma: String, Conocimiento: String });
+const idiomaA = new Schema({idioma:String,Conocimiento:String});
 const pruebaSchema = new Schema({
     Nombre: {
         type: String,
