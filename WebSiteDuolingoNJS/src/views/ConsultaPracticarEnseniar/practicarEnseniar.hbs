@@ -1,0 +1,46 @@
+<div class="container">
+    <h1>Consultar
+    </h1>
+    <div class="row">
+        <!--Formulario -->
+        <div class="col -md-5">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/ConsultaPracticarEnseniar/practicarEnseniar" method="POST">
+                        <!--Campos de texto y botones -->
+
+                        <button type="submit" class="btn btn-primary btn-block">
+                            Buscar
+                        </button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <p></p>
+    <p></p>
+    <p></p>
+    </hr>
+    <h1>Resultado de la busqueda</h1>
+    <!--Tabla que muestra los datos -->
+
+    <div class="row">
+        {{#each Todos}}
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h6 class="card-title">Pais Origen:
+                        {{ PaisOrigen }}</h6>
+                    </h6>
+                    <h6 class="card-title">Cantidad:
+                        {{ PaisOrigen }}</h6>
+                    </h6>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+
+</div>

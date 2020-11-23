@@ -60,6 +60,7 @@ app.use(require('./routes/notes'));
 app.use(require('./routes/users'));
 app.use(require('./routes/busquedas'));
 app.use(require('./routes/Consulta1Admi'));
+app.use(require('./routes/Consulta2Admi'));
 
 // Static Files
 app.use(express.static(path.join(__dirname, 'public')));
