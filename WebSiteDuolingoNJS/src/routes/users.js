@@ -67,6 +67,7 @@ router.post("/users/signup", async (req, res) => {
             res.redirect('/users/signup');
         }
         const newUser = new User({ name, age, sex, paisO, languageL, languageT, hobbies, plattform, email, password });
+        //newUser.user=req.user.id;
         newUser.password = await newUser.encryptPassword(password);
         await newUser.save();
         req.flash('success_msg', 'Usuario registrado');
@@ -79,5 +80,19 @@ router.get('/users/logout', (req, res) => {
     req.logout();
     res.redirect('/');
 });
+/*
+router.post("/agregaridioma/agregarIA", async (req, res) => {
+    const {lenguA}=req.body;
+    const insertar = await User.update(
+        {"_id":user._id},
+        {"$push":{"$idioma":lenguA}},
+        function(err,raw){
+            if(err)return handleError(err);
+            console.log(raw)
+        }
+    )
+    res.render('Pantallaprincipal/Pantallaprincipal')
 
+});
+*/
 module.exports = router;

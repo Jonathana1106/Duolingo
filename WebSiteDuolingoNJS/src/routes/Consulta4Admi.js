@@ -15,7 +15,7 @@ router.post("/ConsultaidiomasApren/ConsultidiomasAprend", async (req, res) => {
     const { idiomasAprender } = req.body;
     console.log('holi');
     const Cantiiioapre = await cantidadIdioAprender.aggregate([
-        {"$unwind":"$idiomasAprender"},{"$group":{"_id":"$idiomasAprender.idioma","total_idioma":{"$sum":1}}}]);
+        {"$unwind":"$languageL"},{"$group":{"_id":"$languageL","total_idioma":{"$sum":1}}}]);
     /*for(var x=0; x<=Todos.length;x++){
         var obj = Todos[x];
         console.log(obj);

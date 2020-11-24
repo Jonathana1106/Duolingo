@@ -5,10 +5,13 @@ const { isAuthenticated } = require('../helpers/auth');
 const { route } = require('./users');
 const User = require('../models/User');
 const passport = require('passport');
+const { findById } = require('../models/User');
 
 
 router.get("/todo",isAuthenticated,  async (req, res) => {
-    const info = await User.find().sort({ title:1 });
+    //const info = await User.find({user: req.user.body}).sort({ title:1 });
+    const hola=req.body;
+    const info = await User.find(hola);
     res.render('Pantallaprincipal/Pantallaprincipal', { info });
 });
 

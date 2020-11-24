@@ -12,9 +12,9 @@ router.get('/ConsultaAdmi/Consulta2Admi', (req, res) => {
 
 
 router.post("/ConsultaFiltroPais2/ConsultaFiltropais", async (req, res) => {
-    const { PaisOrigen } = req.body;
+    const { paisO } = req.body;
     const CantPais = await registroCant.aggregate([{
-        "$group":{"_id":"$PaisOrigen","Total_paises":{"$sum":1}}
+        "$group":{"_id":"$paisO","Total_paises":{"$sum":1}}
     }]);
     /*for(var x=0; x<=Todos.length;x++){
         var obj = Todos[x];
