@@ -7,11 +7,11 @@ const router = express.Router();
 const registroCant = require('../models/User');
 
 router.get('/ConsultaAdmi/Consulta2Admi', (req, res) => {
-    res.render('ConsultaPracticarEnseniar/practicarEnseniar');
+    res.render('ConsultaFiltroPais2/ConsultaFiltropais');
 });
 
 
-router.post("/ConsultaPracticarEnseniar/practicarEnseniar", async (req, res) => {
+router.post("/ConsultaFiltroPais2/ConsultaFiltropais", async (req, res) => {
     const { PaisOrigen } = req.body;
     const CantPais = await registroCant.aggregate([{
         "$group":{"_id":"$PaisOrigen","Total_paises":{"$sum":1}}
@@ -21,7 +21,7 @@ router.post("/ConsultaPracticarEnseniar/practicarEnseniar", async (req, res) => 
         console.log(obj);
         res.render('ConsultaTodoRegistro/Todosregistros',{obj});
     }*/
-    res.render('ConsultaPracticarEnseniar/practicarEnseniar', { CantPais });
+    res.render('ConsultaFiltroPais2/ConsultaFiltropais', { CantPais });
 });
 
 module.exports = router;

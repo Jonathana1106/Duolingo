@@ -4,7 +4,7 @@ const router = express.Router();
 
 const Admin = require('../models/Admin');
 const passportA = require('passport');
-const { route } = require('./notes');
+//const { route } = require('./notes');
 
 router.get('/admins/login', (req, res) => {
     res.render('admins/login');

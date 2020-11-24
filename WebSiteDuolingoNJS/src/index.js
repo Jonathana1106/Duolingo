@@ -57,12 +57,14 @@ app.use((req, res, next) => {
 // Routes
 app.use(require('./routes/index'));
 app.use(require('./routes/admins'));
-app.use(require('./routes/notes'));
+//app.use(require('./routes/notes'));
 app.use(require('./routes/users'));
+app.use(require('./routes/todo'));
 app.use(require('./routes/Consulta1Admi'));
 app.use(require('./routes/Consulta2Admi'));
 app.use(require('./routes/Consulta3Admi'));
 app.use(require('./routes/Consulta4Admi'));
+app.use(require('./routes/todo'));
 //app.use(require('./routes/Consulta1Usuario'));
 app.use(require('./routes/Consulta2Usuario'));
 //app.use(require('./routes/Consulta3Usuario'));

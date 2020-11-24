@@ -1,16 +1,18 @@
 const express = require('express');
 const router = express.Router();
 
+const { isAuthenticated } = require('../helpers/auth');
+
 const User = require('../models/User');
 const passport = require('passport');
-const { route } = require('./notes');
+//const { route } = require('./notes');
 
 router.get('/users/loginregister', (req, res) => {
     res.render('users/loginregister');
 });
 
 router.post('/users/loginregister', passport.authenticate('local', {
-    successRedirect: '/notes',
+    successRedirect: '/todo',
     failureRedirect: '/users/loginregister',
     failureFlash: true
 }));
