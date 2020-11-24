@@ -80,12 +80,12 @@ router.get('/users/logout', (req, res) => {
     req.logout();
     res.redirect('/');
 });
-/*
-router.post("/agregaridioma/agregarIA", async (req, res) => {
+
+/*router.post("/agregaridioma/agregarIA", async (req, res) => {
     const {lenguA}=req.body;
     const insertar = await User.update(
         {"_id":user._id},
-        {"$push":{"$idioma":lenguA}},
+        {"$push":{"$languageL":{"idioma":lenguA}},
         function(err,raw){
             if(err)return handleError(err);
             console.log(raw)
@@ -93,6 +93,6 @@ router.post("/agregaridioma/agregarIA", async (req, res) => {
     )
     res.render('Pantallaprincipal/Pantallaprincipal')
 
-});
-*/
+});*/
+
 module.exports = router;
